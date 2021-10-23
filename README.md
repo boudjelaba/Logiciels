@@ -1,7 +1,5 @@
 # Logiciels
 
-# <cite><font color="C32F23">Logiciels</font></cite>
-
 <div style="border:thin solid orange">
 </div>
 
@@ -39,7 +37,6 @@ Lien utile : <font size="4"><a href="https:www.carnus.fr" class="button" target=
     * <a href="#QT">QT Creator </a> <br>
     * <a href="#LV">LabVIEW </a> <br>
 </div>    
----
 
 <a id="EL"></a>
 ## <cite><font color="C32F23"> Electronique : </font></cite>
@@ -85,7 +82,6 @@ Lien utile : <font size="4"><a href="https:www.carnus.fr" class="button" target=
 <a id="IN"></a>
 ## <cite><font color="C32F23"> Informatique : </font></cite>
 
----
 
 <a id="AN"></a>
 ## <cite><font color="FBB903"> Anaconda : </font></cite>
