@@ -6,7 +6,7 @@
 Carnus - K. Boudjelaba
 
 
-Lien utile : <font size="4"><a href="https:www.carnus.fr" class="button" target="_blank"><span class="user">Lycée Charles Carnus</span></a></font>
+Lien utile : <font size="4"><a href="https://www.carnus.fr/" class="button" target="_blank"><span class="user">Lycée Charles Carnus</span></a></font>
    
 <img src="https://raw.githubusercontent.com/boudjelaba/Utiles/master/Logo/Carnus_1.png"
      alt="Markdown Monster icon"
