@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon de la cybersécurité</title>
+    <link rel="shortcut icon" href="./images/Logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{overflow: auto;}
+        header{position: relative;}
+        .exam{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 80vh;
+            width: 80%;
+            margin: auto;
+        }
+        .btn{
+            background: none;
+            border: none;
+            border: 2px solid var(--color-primary) !important;
+            border-radius: var(--border-radius-1);
+            padding: .5rem 1rem;
+            color: var(--color-white);
+            background-color: var(--color-primary);
+            cursor: pointer;
+            margin: 1rem 1.5rem 1rem 0;
+            margin-top: 1.5rem;
+        }
+        .btn:hover{
+            color: var(--color-primary);
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" title="E5-1 BTS SNIR, LTP Charles Carnus">
+            <img src="./images/logo.jpg" alt="">
+            <h2>K<span class="danger">B</span></h2>
+            <a href="./agenda/C3.html" target="_blank">
+            <span class="material-icons-sharp">calendar_month</span>
+            </a>
+        </div>
+        <div class="navbar">
+            <a href="index.html">
+                <span class="material-icons-sharp">home</span>
+                <h3>Accueil</h3>
+            </a>
+            <a href="exam.html" class="active">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Epreuves</h3>
+            </a>
+            <a href="inscriptions.html">
+                <span class="material-icons-sharp">badge</span>
+                <h3>Inscriptions</h3>
+            </a>
+
+            <div class="profile-dropdown">
+                <div onclick="toggle()" class="profile-dropdown-btn">
+                    <span class="material-icons-sharp" onclick="">download</span>
+                    <h3>Téléchargements</h3>
+                    <span class="material-icons-sharp" onclick="">expand_more</span>
+                </div>
+                <ul class="profile-dropdown-list">
+                    <li class="profile-dropdown-list-item">
+                        <a href="flyer.html">
+                            <i class="material-icons-sharp">topic</i>Flyer
+                        </a>
+                    </li>
+                    <hr />
+                    <li class="profile-dropdown-list-item">
+                        <a href="planning.html">
+                            <i class="material-icons-sharp">event_note</i>
+                            Planning
+                        </a>
+                    </li>
+                    <hr />
+                    <li class="profile-dropdown-list-item">
+                        <a href="brochure.html">
+                            <i class="material-icons-sharp">wallpaper</i>
+                            Brochure
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>       
+    </header>
+
+    <main>
+        <div class="exam timetable">
+            <h2>Examens programmés</h2>
+            <table id="tblData">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Matière</th>
+                        <th>Salle N°</th>
+                        <th>Profs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15 Mai 2023</td>
+                        <td>13h30-15h30</td>
+                        <td>E5-1 : Répartition, préparation</td>
+                        <td>215</td>
+                        <td>KB, FB, PH, FR</td>
+                    </tr>
+                    <tr>
+                        <td>15 Mai 2023</td>
+                        <td>15h30-17h30</td>
+                        <td>E5-1 : Travail en autonomie</td>
+                        <td>215</td>
+                        <td>KB, FB, PH, FR</td>
+                    </tr>
+                    <tr>
+                        <td>16 Mai 2023</td>
+                        <td>08h-12h</td>
+                        <td>E5-1 : Chantiers</td>
+                        <td>215</td>
+                        <td>KB, FB, PH, FR</td>
+                    </tr>
+                    <tr>
+                        <td>16 Mai 2023</td>
+                        <td>13h30-17h30</td>
+                        <td>E5-1 : Chantiers</td>
+                        <td>215</td>
+                        <td>KB, FB, PH, FR</td>
+                    </tr>
+                    <tr>
+                        <td>17 Mai 2023</td>
+                        <td>10h-12h</td>
+                        <td>E5-1 : Recettes</td>
+                        <td>215</td>
+                        <td>KB, PH, FR</td>
+                    </tr>
+                    <tr>
+                        <td>17 Mai 2023</td>
+                        <td>13h30-17h30</td>
+                        <td>Habilitation électrique : Rattrapage</td>
+                        <td>313-314-215-923</td>
+                        <td>KB, PH</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+
+
+<!------------------------------------------>
+
+
+<script src="app.js"></script>
+
+<!------------------------------>
+
+
+<script>
+  let profileDropdownList = document.querySelector(".profile-dropdown-list");
+    let btn = document.querySelector(".profile-dropdown-btn");
+    let classList = profileDropdownList.classList;
+    const toggle = () => classList.toggle("active");
+    window.addEventListener("click", function (e) {
+        if (!btn.contains(e.target)) classList.remove("active");
+    });
+</script>
+
+<!------------------------------------------>
+
+<footer>
+    <div class="footer">
+        <div class="row">
+            <a href="https://www.facebook.com/lyceecarnus/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/lyceecharlescarnusrodez/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/boudjelaba" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+
+        <div class="row">
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Nos services</a></li>
+                <li><a href="#">Inscriptions</a></li>
+                <li><a href="#">Planning</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            Carnus Copyright © 2023 KB - Tous droits réservés || Conçu par : Prof. KB 
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
