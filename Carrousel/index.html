@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+		:root{
+		    --color-dark: #363949;
+		    --color-dark2: #edeffd;
+		    --color-background: #f6f6f9;  
+		}
+		*{
+		    margin:0;
+		    padding: 0;
+		    text-decoration: none;
+		    list-style: none;
+		    box-sizing: border-box;
+		}
+		html{
+		    font-size: 14px;
+		    scroll-behavior: smooth;
+		}
+		body{
+		    font-family: 'Poppins', sans-serif;
+		    font-size: .88rem;
+		    background: var(--color-background);
+		    user-select: none;
+		    overflow-x: hidden;
+		    color: var(--color-dark);
+		}
+		*{
+		    color: var(--color-dark);
+		}
+		img{
+		    display: block;
+		    width: 25%;
+		}
+
+		.pic-ctn {
+		  width: 100%;
+		  height: 110px;
+		}
+		@keyframes display {
+		  0% {
+		    transform: translateX(-25%);
+		    opacity: 0;
+		  }
+		  10% {
+		    transform: translateX(0);
+		    opacity: 1;
+		  }
+		  20% {
+		    transform: translateX(0);
+		    opacity: 0;
+		  }
+		  30% {
+		    transform: translateX(50%);
+		    opacity: 0;
+		  }
+		  100% {
+		    transform: translateX(50%);
+		    opacity: 0;
+		  }
+		}
+		.pic-ctn {
+		  position: relative;
+		  width: 100%;
+		  height: 110px;
+		  margin-top: 20px;
+		  margin-bottom: 310px;/*55vh;*/
+		}
+		.pic-ctn > img {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  opacity: 0;
+		  animation: display 28s infinite;
+		}
+		img:nth-child(2) {
+		  animation-delay: 4s;
+		}
+		img:nth-child(3) {
+		  animation-delay: 8s;
+		}
+		img:nth-child(4) {
+		  animation-delay: 12s;
+		}
+		img:nth-child(5) {
+		  animation-delay: 16s;
+		}
+		img:nth-child(6) {
+		  animation-delay: 20s;
+		}
+		img:nth-child(7) {
+		  animation-delay: 24s;
+		}
+	</style>
+</head>
+<body>
+	<div class="pic-ctn">
+	  <img src="./images/im101.jpg" width="10px" alt="" class="pic">
+	  <img src="./images/im102.jpg" width="10px" alt="" class="pic">
+	  <img src="./images/im103.jpg" width="10px" alt="" class="pic">
+	  <img src="./images/im104.jpg" width="10px" alt="" class="pic">
+	  <img src="./images/phs3.jpg" width="10px" alt="" class="pic">
+	  <img src="./images/phs8.jpg" width="10px" alt="" class="pic">
+	  <img src="./images/phs9.jpg" width="10px" alt="" class="pic">
+	</div>
+</body>
+</html>

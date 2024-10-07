@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#content1 { 
+		 float: left;
+		 color: #333;
+		 border: 1px solid #ccc;
+		 background:#CCC8B3;
+		 margin: 5%;
+		 padding: 1%;
+		 height: 600px;
+		 width: 50%;
+		 display: inline;
+		}
+		[data-component="slideshow"] .slide {
+		  display: none;
+		  text-align: center;
+		}
+
+		[data-component="slideshow"] .slide.active {
+		  display: block;
+		}
+
+
+		[data-component="slideshow"] .slide.active > img{
+		    width: 70%;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="content1">
+		<div id="slideshow-example" data-component="slideshow">
+
+			<div role="list">
+				<div class="slide">
+					<img src="./images/im101.jpg" alt="">
+				</div>
+			</div>
+			<div role="list">
+				<div class="slide">
+					<img src="./images/im102.jpg" alt="">
+				</div>
+			</div>
+			<div role="list">
+				<div class="slide">
+					<img src="./images/im103.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script>
+		
+		var slideshows = document.querySelectorAll('[data-component="slideshow"]');
+		slideshows.forEach(initSlideShow);
+
+		function initSlideShow(slideshow) {
+
+			var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+
+			var index = 0, time = 5000;
+			slides[index].classList.add('active');
+
+			setInterval( () => {
+				slides[index].classList.remove('active');
+				
+				index++;
+				if (index === slides.length) index = 0;
+
+				slides[index].classList.add('active');
+
+			}, time);
+		}
+	</script>
+
+</body>
+</html>
