@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .container h2 {
+            padding: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+            background: #007bff;
+            color: #fff;
+        }
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tbl thead {
+            background: #007bff;
+            color: #fff;
+        }
+        .tbl thead tr th {
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .tbl tbody tr td {
+            font-size: 1rem;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .tbl tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .tbl tbody tr:hover {
+            background: #e9ecef;
+            transition: background 0.3s ease;
+        }
+        .tbl td img {
+            width: 50px;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+        .tbl button {
+            display: inline-block;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .btn-trash {
+            background: #dc3545;
+            color: #fff;
+        }
+        .btn-edit {
+            background: #ffc107;
+            color: #fff;
+        }
+        .tbl tfoot {
+            background: #007bff;
+            color: #fff;
+        }
+        .tbl tfoot tr td {
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 1rem;
+        }
+        .action {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .action.commander {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .action.supprimer {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .tbl thead {
+                display: none;
+            }
+            .tbl tr,
+            .tbl td {
+                display: block;
+                width: 100%;
+            }
+            .tbl tr {
+                margin-bottom: 1rem;
+            }
+            .tbl tbody tr td {
+                text-align: right;
+                position: relative;
+                padding-left: 50%;
+            }
+            .tbl tbody tr td::before {
+                content: attr(data-table);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 1rem;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+        input[type="number"] {
+            width: 50px;
+            height: 30px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1rem;
+            padding-left: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="number"]:hover {
+            background-color: #0056b3;
+            color: #fff;
+            border: solid 1px #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tbl-container">
+            <h2>Panier</h2>
+            <table class="tbl">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Nom produit</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Prix total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-table="Image"><img src="img/ordi1.jpg" alt=""></td>
+                        <td data-table="Nom">Ordinateur 1</td>
+                        <td data-table="Prix">2000 &euro;</td>
+                        <td data-table="Quantité">
+                            <input type="number" value="1" min="1" max="5">
+                            <button class="btn-edit"><i class="fa fa-pencil"></i></button>
+                        </td>
+                        <td data-table="Prix total">2000 &euro;</td>
+                        <td data-table="Supprimer">
+                            <button class="btn-trash"><i class="fa fa-trash"></i> &nbsp;Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-table="Image"><img src="img/ordi2.jpg" alt=""></td>
+                        <td data-table="Nom">Ordinateur 2</td>
+                        <td data-table="Prix">1500 &euro;</td>
+                        <td data-table="Quantité">
+                            <input type="number" value="2" min="1" max="5">
+                            <button class="btn-edit"><i class="fa fa-pencil"></i></button>
+                        </td>
+                        <td data-table="Prix total">3000 &euro;</td>
+                        <td data-table="Supprimer">
+                            <button class="btn-trash"><i class="fa fa-trash"></i> &nbsp;Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-table="Image"><img src="img/ordi3.jpg" alt=""></td>
+                        <td data-table="Nom">Ordinateur 3</td>
+                        <td data-table="Prix">1200 &euro;</td>
+                        <td data-table="Quantité">
+                            <input type="number" value="1" min="1" max="5">
+                            <button class="btn-edit"><i class="fa fa-pencil"></i></button>
+                        </td>
+                        <td data-table="Prix total">1200 &euro;</td>
+                        <td data-table="Supprimer">
+                            <button class="btn-trash"><i class="fa fa-trash"></i> &nbsp;Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-table="Image"><img src="img/ordi4.jpg" alt=""></td>
+                        <td data-table="Nom">Ordinateur 4</td>
+                        <td data-table="Prix">900 &euro;</td>
+                        <td data-table="Quantité">
+                            <input type="number" value="1" min="1" max="5">
+                            <button class="btn-edit"><i class="fa fa-pencil"></i></button>
+                        </td>
+                        <td data-table="Prix total">900 &euro;</td>
+                        <td data-table="Supprimer">
+                            <button class="btn-trash"><i class="fa fa-trash"></i> &nbsp;Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                    	<td colspan="3" rowspan="2"><button class="action supprimer">Vider le panier</button></td>
+                    	<td class="cach" style="text-align:right;padding-right: 10px;">Total</td>
+                    	<td rowspan="2">3000 &euro;</td>
+                    	<td colspan="2"><button class="action commander">Commander</button></td>
+                    </tr>
+                  </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
