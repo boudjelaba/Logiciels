@@ -3,11 +3,14 @@ import matplotlib.pyplot as plt
 
 """_Informations générales_
 # ! Ce code génère et trace les signaux modulés en amplitude et leur spectre
+# ! fréquentiel. Il contient également des fonctions pour calculer le cube d'un
+# ! nombre et le volume d'une sphère.
 # ? Signal modulant (message)
 # ? Signal porteur (porteuse)
 
 # * Functions:
-# *    None
+# *    cube(x)
+# *    volume_sphere(r)
 
 Variables:
     fs (float): Fréquence d'échantillonnage en Hz.
@@ -19,6 +22,8 @@ Variables:
     s (ndarray): Signal AM.
     fft_s (ndarray): FFT du signal modulé.
     fft_f (ndarray): Fréquences de la FFT.
+    x (int or float): Nombre pour le calcul du cube.
+    r (float): Rayon de la sphère.
 
 Le script exécute les étapes suivantes :
 1. Définit la fréquence d'échantillonnage et le tableau temporel.
@@ -27,6 +32,9 @@ Le script exécute les étapes suivantes :
 4. Calcule la FFT du signal modulé et la décale pour la visualisation.
 5. Trace la représentation du domaine temporel du signal modulé.
 6. Trace la représentation du domaine fréquentiel du signal modulé.
+7. Calcule le cube d'un nombre.
+8. Calcule le volume d'une sphère à partir de son rayon.
+9. Affiche le volume de la sphère.
 
 # TODO: Compléter le programme
 """
@@ -77,3 +85,35 @@ plt.grid(which='minor', color='#999999', linestyle='-', alpha=0.2)
 
 plt.tight_layout()
 plt.show()
+
+
+# ? Ajout de calculs avec des fonctions
+
+def cube(x):
+    """
+    # TODO: Calcul le cube d'un nombre.
+
+    Args:
+        x (int or float): Le nombre.
+
+    Returns:
+        int or float: Le cube du nombre.
+    """
+    return x**3
+        
+def volume_sphere(r):
+    """
+    # TODO: Calcul le volume d'une sphère à partir de son rayon.
+
+    Parameters:
+    r (float): Le rayon de la sphère.
+
+    Returns:
+    float: Le volume de la sphère.
+    """
+    return 4/3 * np.pi * cube(r)
+
+r = 5
+v = volume_sphere(r)
+
+print(f"Le volume de la sphère de rayon {r} [m] est : {v:.3f} [m^3].")
